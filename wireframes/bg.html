@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hero Background Example</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --text:#222; --muted:#6F6F6F; --primary:#2563EB; --line:#E6E6E6;
+    }
+    body{margin:0;font-family:'Lora',serif;background:#F5F5F5;color:var(--text)}
+    .hero{
+      position:relative;overflow:hidden;min-height:60vh;padding:6rem 1rem 3rem;text-align:center;
+    }
+    .hero__inner{max-width:900px;margin:0 auto;position:relative;z-index:1}
+    .hero::before{
+      content:"";position:absolute;inset:0;
+      background:url('https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=1950&q=80')
+        center/cover no-repeat;
+      filter:grayscale(100%);
+      transform:scale(1.05);
+      z-index:-2;
+    }
+    .hero::after{
+      content:"";position:absolute;inset:0;
+      background:rgba(255,255,255,0.85);
+      z-index:-1;
+    }
+    h1{font-family:'Inter',sans-serif;font-size:clamp(2rem,3vw,3rem);margin:0 0 .8rem}
+    p{max-width:700px;margin:0 auto;color:var(--muted);line-height:1.6}
+    .btn{display:inline-block;padding:.6rem .9rem;margin:.5rem;border-radius:10px;font-family:'Inter',sans-serif;font-weight:600;text-decoration:none}
+    .btn.primary{background:var(--primary);color:#fff;border:1px solid var(--primary)}
+    .btn.ghost{border:1px solid var(--line);color:var(--text);background:#fff}
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="hero__inner">
+      <h1>Hi, I’m Raghav — building things, writing clearly.</h1>
+      <p>Reflections, creative notes, and technical work — presented with a calm, professional look.</p>
+      <a class="btn primary" href="#">Start here</a>
+      <a class="btn ghost" href="#">Personal writing</a>
+    </div>
+  </section>
+</body>
+</html>
+
