@@ -5,10 +5,210 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Raghav — Personal Site</title>
   <meta name="description" content="Raghav Subramanian's blog about games, movies, poetry, tech, and reflections."/>
-  <link rel="stylesheet" href="assets/css/style.css"/>
+  <!-- Google Fonts: Montserrat (headings) + Merriweather (body) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#F9FAFB;--surface:#FFFFFF;--text:#2E2E2E;--muted:#6B7280;
+      --line:#E5E7EB;--primary:#2563EB;--secondary:#14B8A6;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:'Merriweather',serif}
+    a{color:inherit;text-decoration:none}
+    header{position:sticky;top:0;z-index:50;background:rgba(249,250,251,.85);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+    .nav{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:.9rem 1rem}
+    .brand{font-family:'Montserrat',sans-serif;font-weight:700;letter-spacing:.3px}
+    .brand span{color:var(--primary)}
+    .menu{display:flex;gap:1rem;font-family:'Montserrat',sans-serif;font-weight:500}
+    .menu a{padding:.4rem .6rem;border-radius:8px}
+    .menu a:hover{background:var(--surface);box-shadow:0 1px 0 rgba(0,0,0,.04)}
+    .hero{max-width:1100px;margin:0 auto;padding:4rem 1rem 2rem;text-align:center}
+    .hero h1{font-family:'Montserrat',sans-serif;font-size:clamp(2rem,3.2vw,3rem);margin:0 0 .8rem}
+    .hero p{margin:0 auto;max-width:700px;color:var(--muted);line-height:1.7}
+    .section{max-width:1100px;margin:0 auto;padding:2rem 1rem 3rem}
+    .section h2{font-family:'Montserrat',sans-serif;font-size:1.6rem;margin:0 0 1.2rem}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem}
+    .card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.2rem;transition:transform .12s ease,box-shadow .12s ease}
+    .card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.06)}
+    .kicker{font-family:'Montserrat',sans-serif;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--secondary)}
+    .card h3{font-family:'Montserrat',sans-serif;margin:.4rem 0 .6rem;font-size:1.15rem}
+    .meta{color:var(--muted);font-size:.9rem}
+    .btn{display:inline-block;padding:.6rem .9rem;border-radius:10px;border:1px solid var(--line);font-family:'Montserrat',sans-serif;font-weight:600}
+    .btn.primary{border-color:var(--primary);color:#fff;background:var(--primary)}
+    .btn.ghost{background:transparent}
+    .grid-tiles .card{text-align:center;padding:2rem 1rem;font-family:'Montserrat',sans-serif;font-weight:600}
+    footer{border-top:1px solid var(--line);background:#fff}
+    .footer-inner{max-width:1100px;margin:0 auto;padding:2rem 1rem;display:grid;gap:1rem;grid-template-columns:1fr;color:var(--muted)}
+    .page{border-top:1px solid var(--line);background:linear-gradient(180deg,rgba(37,99,235,.06),transparent 60%)}
+    .page-inner{max-width:900px;margin:0 auto;padding:2rem 1rem}
+    .page h1{font-family:'Montserrat',sans-serif;margin:0 0 .3rem}
+    .lead{color:var(--muted);margin:0 0 1.2rem}
+    .list{padding-left:1rem}
+    @media(max-width:760px){.menu{display:none}}
+  </style>
 </head>
 <body>
-  <h1>Welcome to Raghav's Blog</h1>
-  <p>This is the entry point. Navigate to About, Games, Movies, Writing, Life, Tech, Projects, or Contact pages.</p>
+  <!-- Top Nav -->
+  <header>
+    <div class="nav">
+      <div class="brand">Raghav<span>.</span></div>
+      <nav class="menu">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#games">Games</a>
+        <a href="#movies">Movies</a>
+        <a href="#writing">Writing</a>
+        <a href="#life">Life</a>
+        <a href="#tech">Tech</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Home -->
+  <section id="home" class="hero">
+    <h1>Hi, I’m Raghav — I write about games, movies, poetry & tech.</h1>
+    <p>Long-form essays, quick reviews, and technical deep dives. This is a single home for all of it — curated by sections with a clean, distraction-free reading experience.</p>
+    <div style="margin-top:1.2rem;display:flex;gap:.6rem;justify-content:center;">
+      <a class="btn primary" href="#about">Start here</a>
+      <a class="btn ghost" href="#latest">Latest posts</a>
+    </div>
+  </section>
+
+  <section id="latest" class="section">
+    <h2>Featured Highlights</h2>
+    <div class="cards">
+      <article class="card">
+        <div class="kicker">Games</div>
+        <h3>Baldur’s Gate 3: Systems that seduce</h3>
+        <p class="meta">8 min read • Review</p>
+      </article>
+      <article class="card">
+        <div class="kicker">Poetry</div>
+        <h3>Fire & Silence</h3>
+        <p class="meta">A short verse from a new cycle</p>
+      </article>
+      <article class="card">
+        <div class="kicker">Tech</div>
+        <h3>Clock Tree Optimization: A readable guide</h3>
+        <p class="meta">VLSI • CAD automation</p>
+      </article>
+      <article class="card">
+        <div class="kicker">Life</div>
+        <h3>Notes from a solo trip</h3>
+        <p class="meta">Travel • Reflection</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Browse by Category</h2>
+    <div class="cards grid-tiles">
+      <a class="card" href="#games">Games</a>
+      <a class="card" href="#movies">Movies & TV</a>
+      <a class="card" href="#writing">Poetry & Writing</a>
+      <a class="card" href="#life">Life & Reflections</a>
+      <a class="card" href="#tech">Tech & Work</a>
+    </div>
+  </section>
+
+  <!-- Pages -->
+  <section id="games" class="page">
+    <div class="page-inner">
+      <h1>Games</h1>
+      <p class="lead">Reviews, stories, and gaming reflections.</p>
+      <ul class="list">
+        <li><strong>Baldur’s Gate 3 Review</strong> — Mechanics & storytelling.</li>
+        <li><strong>Football Manager Prototype</strong> — Building a narrative sim.</li>
+        <li><strong>Counter-Strike Diaries</strong> — Team strats & highlights.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="movies" class="page">
+    <div class="page-inner">
+      <h1>Movies & TV</h1>
+      <p class="lead">Reviews, essays, and watchlists.</p>
+      <ul class="list">
+        <li><strong>Dune: Part Two</strong> — Epic scope and analysis.</li>
+        <li><strong>Favorite TV Shows 2025</strong> — Curated recommendations.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="writing" class="page">
+    <div class="page-inner">
+      <h1>Poetry & Writing</h1>
+      <p class="lead">Creative pieces and writing process.</p>
+      <ul class="list">
+        <li><strong>Poem: Fire & Silence</strong></li>
+        <li><strong>Short Story: The Electric Storm</strong></li>
+        <li><strong>Writing Notes</strong> — Process, inspiration, struggles.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="life" class="page">
+    <div class="page-inner">
+      <h1>Life & Reflections</h1>
+      <p class="lead">Personal essays, travel, philosophy.</p>
+      <ul class="list">
+        <li><strong>Solo Trip to Sri Lanka</strong> — Notes and impressions.</li>
+        <li><strong>On Family & Memory</strong> — Essays and thoughts.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="tech" class="page">
+    <div class="page-inner">
+      <h1>Tech & Work</h1>
+      <p class="lead">Articles on VLSI, CAD automation, and experiments.</p>
+      <ul class="list">
+        <li><strong>Clock Tree Optimization</strong> — A technical explainer.</li>
+        <li><strong>EDA Flow Automation</strong> — Scripts and tools.</li>
+        <li><strong>AI in Chip Design</strong> — Future directions.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="about" class="page">
+    <div class="page-inner">
+      <h1>About</h1>
+      <p class="lead">Hello! I’m Raghav, a writer, engineer, and explorer of ideas. This site brings together games, movies, poetry, technology, and reflections on life.</p>
+      <p>Writing is how I make sense of the world — and invite others into the journey.</p>
+    </div>
+  </section>
+
+  <section id="projects" class="page">
+    <div class="page-inner">
+      <h1>Projects</h1>
+      <ul class="list">
+        <li><strong>Football Manager Prototype</strong> — Narrative-driven management game.</li>
+        <li><strong>Novel-in-progress</strong> — Sci-fi about memory & identity.</li>
+        <li><strong>Fitness Plan</strong> — Strength + endurance experiments.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" class="page">
+    <div class="page-inner">
+      <h1>Contact</h1>
+      <p class="lead">If you’d like to reach out, collaborate, or just say hi:</p>
+      <ul class="list">
+        <li>Email: raghav.ksub@gmail.com</li>
+        <li>Socials: Twitter / LinkedIn / Medium</li>
+      </ul>
+      <p>(Contact form placeholder)</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div>© 2025 Raghav Subramanian.</div>
+      <div>Made with Montserrat + Merriweather • Palette: Electric Blue & Soft Teal.</div>
+    </div>
+  </footer>
 </body>
 </html>
